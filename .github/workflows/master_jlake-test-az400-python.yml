@@ -9,7 +9,9 @@ on:
     branches:
       - master
   workflow_dispatch:
-
+permissions:
+  id-token: write   # Grant write permission for id-token
+  contents: read    # Ensure other necessary permissions (e.g., read contents)
 jobs:
   debug:
     runs-on: ubuntu-latest
