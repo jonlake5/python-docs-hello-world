@@ -26,6 +26,7 @@ jobs:
 
       - name: Display Authenticated Service Principal
         run: |
+          echo ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
           az account show
           az ad sp show --id $AZURE_CLIENT_ID
   build:
