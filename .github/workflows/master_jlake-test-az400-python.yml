@@ -31,9 +31,8 @@ jobs:
 
       - name: Display Authenticated Service Principal
         run: |
-          echo ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
           az account show
-          az ad sp show --id $AZURE_CLIENT_ID
+          az ad sp show --id ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
   build:
     runs-on: ubuntu-latest
     permissions:
@@ -95,9 +94,8 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D4CA3755203E4A01B019C5CBFCF56FEA }}
       - name: Display Authenticated Service Principal
         run: |
-          echo ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
           az account show
-          az ad sp show --id $AZURE_CLIENT_ID
+          az ad sp show --id ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
