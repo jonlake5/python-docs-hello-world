@@ -19,14 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Azure Login
-        uses: azure/login@v1
+      - name: Login to Azure
+        uses: azure/login@v2
         with:
-          # client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
-          # tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DA667EE5B2334B9EB0000B27695B7EBF }}
-          client-id: ${{ secrets.CLIENT_ID }}
-          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
-          tenant-id: ${{ secrets.TENANT_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3562E0251AE14E0A8C26475BA9295FD9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DA667EE5B2334B9EB0000B27695B7EBF }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D4CA3755203E4A01B019C5CBFCF56FEA }}
 
       - name: Display Authenticated Service Principal
         run: |
